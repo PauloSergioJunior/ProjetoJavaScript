@@ -42,7 +42,7 @@
 		    <br/>
 		  <label for="senha" class="sr-only">Senha</label>
 		  <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-		  
+  		  <label id="lblErro" style="color:red"></label>
 		  <a href="${pageContext.request.contextPath}/" onclick="valida()" class="btn btn-lg btn-primary btn-block" type="submit">Logar</a>
 		  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
 	</form>
@@ -60,9 +60,11 @@ const valida = () => {
 		alert("Logado!")
 		location.href= 'index.jsp';
 	}else{
-		alert("Login ou senha incorretos")
+		document.getElementById("lblErro").innerText = "Login ou senha invalidos!";
+		
 		}
-  }
+}
+
 </script>
 
 </html>
