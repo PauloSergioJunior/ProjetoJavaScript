@@ -54,8 +54,7 @@ const valida = () => {
     let email = document.getElementById("email").value;
     let senha = document.getElementById("senha").value;
     if(email === '' && senha === ''){
-	    alert('Campos obrigatórios não preenchidos!');
-	    window.history.back('http://localhost:8080/agenda-acme/login.jsp');
+    	document.getElementById("lblErro").innerText = "Campos obrigatórios não preenchidos!";
     }else if(email === 'paulo@gmail.com' && senha === '123'){
 		alert("Logado!")
 		location.href= 'index.jsp';

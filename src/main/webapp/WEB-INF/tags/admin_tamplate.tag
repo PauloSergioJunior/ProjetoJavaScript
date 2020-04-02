@@ -19,7 +19,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-primary">
 		<a class="sidebar-toggle mr-3" href="#"><i class="fa fa-bars"></i></a>
-		<a class="navbar-brand" href="${pageContext.request.contextPath}/">Projeto JS</a>
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Projeto JS</a>
 
 		<div class="navbar-collapse collapse">
 			<ul class="navbar-nav ml-auto">
@@ -55,7 +55,7 @@
 			<nav aria-label="breadcrumb">
 			  <ol class="breadcrumb">
 			    <li class="breadcrumb-item">
-			    	<a href="${pageContext.request.contextPath}/">Home</a>
+			    	<a href="${pageContext.request.contextPath}/index.jsp">Home</a>
 			    </li>
 			    <li class="breadcrumb-item active" aria-current="page">${breadcrumb}</li>
 			  </ol>
@@ -72,13 +72,12 @@
 	<script src="${pageContext.request.contextPath}/assets/admin/js/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/admin/js/bootadmin.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/admin/chart/chart.js"></script>
-	
 	 <script>
 	
 	 const ctxB = document.getElementById("barChart").getContext('2d');
 	 const myBarChart = new Chart(ctxB, {type: 'bar',
 	 	data: {labels: ["Funcionários", "Departamentos", "Usuários", "Dependentes", "Empresas"],
-	 	 datasets: [{label: 'Cadastros',data: [12, 19, 13, 17, 21, 14],
+	 	 datasets: [{label: 'Cadastros',data: [12, 19, localStorage.length - 1, 17, 21, 14],
 		 backgroundColor: [
 		 'rgba(255, 99, 132, 0.2)',
 		 'rgba(54, 162, 235, 0.2)',
@@ -107,5 +106,6 @@
 	 	}
 	 }); 
 	</script>
+	
 </body>
 </html>
